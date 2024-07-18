@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+
+    <h2 class="header">Sammelbestellungen</h2>
+
+    <div class="orders-frame">
+        <div class="orders">
+            {% for item in orders %}
+            <div class="order">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Logo_REWE.svg/1200px-Logo_REWE.svg.png" alt="{{item}}" class="img">
+                <div class="item-count counter">5 items</div>
+                <div class="coupon-count counter">2 coupons</div>
+                <div class="add">Bestellung hinzufügen</div>
+                <div class="complete">Bestellung abhaken</div>
+            </div>
+            {% endfor %}
+            <div class="add-order order">
+                <span class="material-symbols-outlined plus">add</span>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
